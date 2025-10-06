@@ -30,7 +30,7 @@ class EstudianteController extends Controller
      */
     public function store(Request $request)
     {
-   $data = $r->validate([
+   $data = $request->validate([
             'nombre' => ['required','string','max:100'],
             'apellido' => ['required','string','max:100'],
             'telefono' => ['nullable','string','max:30'],
@@ -61,7 +61,7 @@ class EstudianteController extends Controller
      */
     public function update(Request $request, Estudiante $estudiante)
     {
-       $data = $r->validate([
+       $data = $request->validate([
             'nombre' => ['required','string','max:100'],
             'apellido' => ['required','string','max:100'],
             'telefono' => ['nullable','string','max:30'],
